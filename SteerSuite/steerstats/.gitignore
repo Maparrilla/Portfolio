@@ -1,0 +1,8 @@
+
+
+*.py[cod]
+*$py.class
+*.pyc
+
+/frames/
+/data/simData/
