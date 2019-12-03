@@ -1,0 +1,11 @@
+procedure calculate
+
+begin
+
+	x := 10;
+
+	y := 3;
+
+	val1 := x - 6 + y;
+
+end;
