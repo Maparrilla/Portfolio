@@ -1,0 +1,23 @@
+h1{
+    color:white;
+    font-size:50px;
+    text-align:left;
+}
+h2{
+    color:white;
+    font-size:25px;
+    text-align:left;
+}
+p.myFont{
+    font-family: Arial, Helvetica, sans-serif;
+}
+table,td{
+    text-align:center;
+    vertical-align:top;
+    margin-left:auto; 
+    margin-right:auto;
+    width:90%;
+}
+body {
+    background-color:black;
+}
