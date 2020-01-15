@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sentence Creator & Number Guesser</title>
+		<link rel="stylesheet" type="text/css" href="CS230Lab3.css">
+		<style>
+            		table{margin-left:auto;
+                		margin-right:auto;
+                		text-align:center;
+                		width:80%;}
+        	</style>
+		<script>
+			function createSentence(){
+				var name;
+				name = document.getElementById("nameBox").value;
+				var age;
+				age = document.getElementById("ageBox").value;
+				if(name.length == 0){
+					document.getElementById("outputBox1").innerHTML = "Must enter a name!";
+				}else if(isNaN(age)||age<1||age>130){
+					document.getElementById("outputBox1").innerHTML = "Invalid age!";
+				}else{
+					document.getElementById("outputBox1").innerHTML = "Hello my name is "+
+											name+" and I am "+age+
+											" years old.";
+				}
+			}
+			function guessNumber(){
+				var guess;
+				guess = document.getElementById("guessBox").value;
+				var num;
+				num = document.getElementById("num").value
+				if(guess == num){
+					document.getElementById("outputBox2").innerHTML = "You were right!";
+				}else if(guess > num){
+					document.getElementById("outputBox2").innerHTML = "You were high...\n"+
+											"Your guess: "+guess;
+					document.getElementById("guessBox").value = "";
+				}else{
+					document.getElementById("outputBox2").innerHTML = "You were low...\n"+
+											"Your guess: "+guess;
+					document.getElementById("guessBox").value = "";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input id ="num" type="hidden" value="generateNumber()">
+		<script>
+			var num = Math.floor((Math.random()*10)+1);
+  			document.getElementById("num").value = num;
+		</script>
+		<table>
+			<tr>
+				<td style="width:70%">
+					<h1><br>
+					Enter your name:<br>
+					<input id="nameBox" type="text"><br>
+					<br>
+					Enter your age:<br>
+					<input id="ageBox" type="number"><br>
+					<br>
+					<button type="button" onclick="createSentence()"><h1 style="font-size:20px">Create Sentence</h1></button><br>
+					<br>
+					<p id="outputBox1">
+					</p>
+					</h1>
+				</td>
+				<td>
+					<h1>
+					<br>
+					Guess a number between 1 - 10:<br>
+					<input id="guessBox" type="number"><br>
+					<br>
+					<button type"button" onclick="guessNumber()"><h1 style="font-size:20px">Guess Number</h1></button><br>
+					<br><br><br><br>
+					<p id="outputBox2">
+					</p>
+					</h1>
+				</td>
+			</tr>
+		</table>					
+	</body>
+</html>
